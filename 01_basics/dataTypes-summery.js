@@ -36,4 +36,4 @@ const myFunction= function(){
 }
 
 
-console.log(typeof heros);//bigNumber(bigint),myObj(object),myFunction(function),outsideTemp(object)
+console.log(typeof heros);//object bigNumber(bigint),myObj(object),myFunction(function),outsideTemp(object)
