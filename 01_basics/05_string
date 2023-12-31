@@ -20,7 +20,7 @@ console.log(gameName.indexOf('B'));
 const newString=gameName.substring(0,6);
 console.log(newString);
 
-const aS=gameName.slice(-22,4);
+const aS=gameName.slice(-22,4);//mobi
 console.log(aS);
 
 const newSOne="     Muizz  ";
