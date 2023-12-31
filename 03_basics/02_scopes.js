@@ -52,4 +52,4 @@ const addTwo=function(num){
 return num+2;
 }
 
-//to learn more study hoisting
+//to learn more study hoisting(why we declare function before initialize but not expression?)
