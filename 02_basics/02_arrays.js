@@ -28,9 +28,9 @@ console.log(useableArr);
 
 
 console.log(Array.isArray("Muizz"));
-console.log(Array.from("Muizz"));
-console.log(Array.from({name: "Muizz"}));//interesting
+console.log(Array.from("Muizz")); //['M','u','i','z','z']
+console.log(Array.from({name: "Muizz"}));//interesting []
 //it cant convert we have to say how to store like using key or values
 
 let score=100;
-console.log(Array.of(score,200,300));
+console.log(Array.of(score,200,300));//[100,200,300]
