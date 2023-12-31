@@ -7,7 +7,7 @@ objUser.id="123abc";
 objUser.name="sammy";
 objUser.isLoggedIn=false;
 
-console.log(objUser);
+//console.log(objUser);
 
 
 const regularUser={
@@ -20,7 +20,7 @@ const regularUser={
     }
 }
 
-console.log(regularUser.fullname.userfullName);
+//console.log(regularUser.fullname.userfullName);
 
 const obj1={1:"a",2:"b"};
 const obj2={3:"c",4:"d"};
@@ -36,12 +36,24 @@ const obj2={3:"c",4:"d"};
 //spread
 
 const obj3={...obj1,...obj2};
-console.log(obj3); //{'1':'a','2':'b',...}
+//console.log(obj3); //{'1':'a','2':'b',...}
 
 //both this return me an array of keys or values.those very imp******
-console.log(Object.keys(obj3));//['1','2','3','4']
-console.log(Object.values(obj3));//['a','b','c','d']
+//console.log(Object.keys(obj3));//['1','2','3','4']
+//console.log(Object.values(obj3));//['a','b','c','d']
 
 //entries return array of each key and value
 
-console.log(Object.entries(obj3));//[['1','a'],['2','b'],['3','c'],['4','d']]
+//console.log(Object.entries(obj3));//[['1','a'],['2','b'],['3','c'],['4','d']]
+
+const course={
+    courseName: "Js in hindi",
+    price: "999",
+    courseInstructor: "hitesh"
+}
+
+//object destructuring
+
+const {courseInstructor: Instructor}=course;
+//console.log(courseInstructor);
+console.log(Instructor);
