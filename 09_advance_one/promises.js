@@ -1,3 +1,4 @@
+/*
 const promiseOne=new Promise((resolve,reject)=>{
     //Do an asyc task
     //DB task,cryptography,network
@@ -15,7 +16,7 @@ new Promise(function(resolve,reject){
     setTimeout(function(){
         console.log("Async Two");
         resolve();
-    },1700)
+    },1000)
 }).then(function(){
     console.log("Promise consumed two");
 });
@@ -49,5 +50,61 @@ promiseFour.then((user)=>{
 console.log(userName);
 }).catch(function(err){
  console.log(err);
+}).finally(()=>{
+    console.log("worked resolved or rejected");
 })
+
+
+const promiseFive=new Promise(function(resolve,reject){
+setTimeout(function(){
+    let error=true;
+    if(!error){
+        resolve({userName:"Muizz",email:"exp@gmail.com"});
+    }else{
+        reject('ERROR: js went wrong')
+    }
+},1000)
+});
+
+async function consumePromiseFive(){
+   try{
+    const response=await promiseFive;
+    console.log(response);
+   }catch(error){
+    console.log("error");
+   }
+}
+consumePromiseFive();
+*/
+
+//Two ways to do
+
+//**NO:1 using Async & Await
+// async function getAllUsers(){
+//     try{
+//     const response=await fetch('https://jsonplaceholder.typicode.com/users');
+//      const data=await response.json();
+//      console.log(data);
+//     }catch(err){
+//         console.log("E: ",err);
+//     }
+     
+// }
+// getAllUsers();
+
+
+
+//NO:2 Using Fetch 
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response)=>{
+return response.json();
+})
+.then((data)=>{
+    console.log(data);
+})
+.catch((error)=>{
+    console.log(error);
+})
+
+
 
