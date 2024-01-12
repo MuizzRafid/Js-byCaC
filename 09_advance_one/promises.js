@@ -58,12 +58,12 @@ console.log(userName);
 const promiseFive=new Promise(function(resolve,reject){
 setTimeout(function(){
     let error=true;
-    if(!error){
+    if(error){
         resolve({userName:"Muizz",email:"exp@gmail.com"});
     }else{
         reject('ERROR: js went wrong')
     }
-},1000)
+},0)
 });
 
 async function consumePromiseFive(){
@@ -75,8 +75,8 @@ async function consumePromiseFive(){
    }
 }
 consumePromiseFive();
-*/
 
+*/
 //Two ways to do
 
 //**NO:1 using Async & Await
@@ -84,6 +84,7 @@ consumePromiseFive();
 //     try{
 //     const response=await fetch('https://jsonplaceholder.typicode.com/users');
 //      const data=await response.json();
+//      console.log("Async");
 //      console.log(data);
 //     }catch(err){
 //         console.log("E: ",err);
@@ -100,6 +101,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
 return response.json();
 })
 .then((data)=>{
+    //console.log("fetch");
     console.log(data);
 })
 .catch((error)=>{
