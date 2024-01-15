@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    let hey="hey";
+    function init(){
+        let name="Mozilla";
+        function display(){
+            console.log(name);
+            console.log(hey);
+        }
+        display();
+    }
+
+    init();
+
+//inthis case when makeFunc called it should be vanish.then how we get name cause name is in makeFunc()?
+//in this case makeFunc will vanish from execution context but js store not only the return displayName()
+//function but also store makeFunc() in memory cause name is connect to makeFunc()
+    function makeFunc(){
+        const name="July";
+        function displayName(){
+            console.log(name);
+        }
+        return displayName();
+    }
+
+    makeFunc();
+</script>
+<script>
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = `orange`
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+    // }
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
+
+</script>
+</html>
