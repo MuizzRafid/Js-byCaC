@@ -8,7 +8,7 @@ let valueInNumber=Number(score);
 // console.log(valueInNumber);
 
 //To Number
-//"33"=>33, "33abc"=>NaN,true=>1,false=>0,null=>0,undefined=>Nan
+//"33"=>33,""=>0, "33abc"=>NaN,true=>1,false=>0,null=>0,undefined=>Nan
 
 let isLogedIn=32423;
 let boolIsLoggedIn=Boolean(isLogedIn);
