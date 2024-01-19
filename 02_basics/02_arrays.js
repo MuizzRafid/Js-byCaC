@@ -27,8 +27,13 @@ const useableArr=anoArr.flat(Infinity);
 console.log(useableArr);
 
 
+//the Array.isArray(pass value) determine pass value array or not
 console.log(Array.isArray("Muizz"));
+
+//Array.from() creates a new shallow-copied Array from iterable or
+//array-like object
 console.log(Array.from("Muizz")); //['M','u','i','z','z']
+
 console.log(Array.from({name: "Muizz"}));//interesting []
 //it cant convert we have to say how to store like using key or values
 

@@ -1,6 +1,8 @@
 //two ways to declare object.1literal way 2.constructor way
-//singleton makes when object declare constructor way
+//you can add also two ways
+//3.with new keyword,4.using Object.create();
 
+//singleton makes when object declare constructor way
 
 //object literals
 
@@ -17,7 +19,7 @@ const JsUser={
     lastLoginDays:["Monday","Saturday"]
 }
 
-//2 ways. but i cant use first way for full name.so 2nd way is good. 
+//2 ways to get value.i cant use first way for full name.so 2nd way is good. 
 // console.log(JsUser.name);
 // console.log(JsUser["name"]);
 // console.log(JsUser["full name"]);
@@ -37,3 +39,18 @@ JsUser.greetingtwo= function(){
 }
 console.log(JsUser.greeting());
 console.log(JsUser.greetingtwo());
+
+
+
+//objects are mutable.Objects are addressed by reference not by value.
+
+const person={
+    firstName:"Jwelry",
+    lastName:"Downey",
+    age:3
+}
+const x=person;
+console.log(person.age);
+x.age=4;
+console.log(person.age);
+
