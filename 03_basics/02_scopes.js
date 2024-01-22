@@ -2,8 +2,10 @@
 There are 3 Types of scope:
 1.global scope(for browser its called window)
 2.Funcional scope
-3.block scope
+3.block scope(if..else,forloop)
 
+var:has functional scope
+let and const:has block scope
 */
 
 var c = 300; //c is a global variable
@@ -17,9 +19,26 @@ let a = 100;
 }
 
 //console.log(a);//error
-//console.log(c);//i can print this outside of the scope and its a problem
+//console.log(c);//i can print this outside of the scope cause the functional
+//scope it counts is global as its function scope
 
-//console.log("outter a:",a);
+function fscope() {
+  var cc = "log me";
+}
+//console.log(cc);//give me error cause here i define a functional scope for cc
+
+function scopeExample() {
+  if (true) {
+    let aa = "aa here";
+    var bb = "bb here";
+    console.log(aa);
+  }
+  //console.log(aa); //error cause outside of block
+  console.log(bb);
+}
+//console.log(bb);//error cause outside of function
+
+scopeExample();
 
 function one() {
   let userName = "Muizz";
