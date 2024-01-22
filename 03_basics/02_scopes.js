@@ -1,5 +1,14 @@
-var c = 300;
+/*
+There are 3 Types of scope:
+1.global scope(for browser its called window)
+2.Funcional scope
+3.block scope
+
+*/
+
+var c = 300; //c is a global variable
 let a = 100;
+//block scope
 {
   let a = 10;
   const b = 20;
