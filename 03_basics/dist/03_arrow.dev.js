@@ -13,7 +13,11 @@ var user = {
 
 /*
 Three types of function.1)function declaration,2)function expression
-3)arrow function.
+3)arrow function...
+
+function declaration vs function expression
+1.can access before | can access after function defination
+2.declaration are hoisted | expression are not hoisted.
 
 
 */
