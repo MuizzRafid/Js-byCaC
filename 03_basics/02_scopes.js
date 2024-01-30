@@ -83,9 +83,14 @@ var addThree = () => {
 
 /*
 
-Even with var, the behavior is quite similar to const in this context. In JavaScript, both var and const declarations are hoisted, but only the variable declarations are hoisted, not the assignments.
+Even with var, the behavior is quite similar to const in this context. In JavaScript, both var and const declarations are hoisted, 
+but only the variable declarations are hoisted, not the assignments.
 
-So, in your example, the var addThree declaration is hoisted to the top of its scope, but the assignment addThree = () => {...} remains in place. Therefore, when you try to call addThree() before it's assigned a value (i.e., before the function expression () => {...}), it will result in an error because addThree is undefined at that point.
+in last two cases addTwo and addThree is hoisted in phase1(memory) as variable not for function call but for the first case it store
+the whole function in memory phase at start.So i get the result
+So, in your example, the var addThree declaration is hoisted to the top of its scope, but the assignment addThree = () => {...} 
+remains in place. Therefore, when you try to call addThree() before it's assigned a value (i.e., 
+  before the function expression () => {...}), it will result in an error because addThree is undefined at that point.
 */
 
 //to learn more study hoisting(why we declare function before initialize but not expression?)
