@@ -6,7 +6,7 @@ There are 3 Types of scope:
 2.Funcional scope
 3.block scope(if..else,forloop)
 
-var:has functional scope
+var:has global scope
 let and const:has block scope
 */
 var c = 300; //c is a global variable
@@ -61,7 +61,7 @@ if (true) {
   } // console.log(web);//error
 
 } //***************       Interstring          ************
-//2ways declare function
+//3ways declare function
 
 
 console.log(addOne(5)); //no error for before declaration
@@ -74,4 +74,17 @@ function addOne(num) {
 
 var addTwo = function addTwo(num) {
   return num + 2;
-}; //to learn more study hoisting(why we declare function before initialize but not expression?)
+};
+
+addThree(); // gives error
+
+var addThree = function addThree() {
+  console.log("Arrow Function");
+};
+/*
+
+Even with var, the behavior is quite similar to const in this context. In JavaScript, both var and const declarations are hoisted, but only the variable declarations are hoisted, not the assignments.
+
+So, in your example, the var addThree declaration is hoisted to the top of its scope, but the assignment addThree = () => {...} remains in place. Therefore, when you try to call addThree() before it's assigned a value (i.e., before the function expression () => {...}), it will result in an error because addThree is undefined at that point.
+*/
+//to learn more study hoisting(why we declare function before initialize but not expression?)
