@@ -12,7 +12,7 @@ for (var key in myObj) {
   console.log("".concat(key, " means ").concat(myObj[key]));
 }
 /*
-console.log(myObj.key)//gives undefined cause there has not key as named "key"
+console.log(myObj.key)//gives undefined cause there has not key as named "key"0
 
 
 If you try to use myObj.key instead, JavaScript will attempt to access a property
