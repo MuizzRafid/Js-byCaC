@@ -66,7 +66,7 @@ console.log(a() ?? c()); //a here,c here ,foo
 //goes for c to evaluate and print c here , foo
 console.log(b() ?? c()); //b here flase
 //but b() has no undefined or null so after print b here it not
-//goes for c
+//goes for
 
 // *** Ternery Operator
 //condition ? true : false
