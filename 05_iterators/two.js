@@ -1,18 +1,15 @@
+const myHero = ["SuperMan", "BatMan", "SpiderMan"];
 
-let myArray=['flash','batman','superman'];
+let count = 0;
+while (count < myHero.length) {
+  console.log(myHero[count]);
+  count++;
+}
 
-let arr=0;
+do {
+  console.log(myHero[count]);
+  count--;
+} while (count >= 0);
 
-//while loop
-while(arr<myArray.length){
-    console.log(myArray[arr]);
-    arr++;
-};
-arr=0;
-// do while
-do{
-    console.log(`Value is : ${myArray[arr]}`);
-    arr++;
-}while(arr < myArray.length)
-
-
+//**Try to find why i get undefined at the starting of printing
+//do while loop
