@@ -9,17 +9,19 @@
 
   <script>
     const div = document.createElement("div");
+    const p = document.createElement("p");
     console.log(div);
     div.className = "main";
     div.id = Math.round(Math.random() * 10 + 1);
     div.setAttribute("title", "generated title");
-    div.setAttribute("class", "another");
+    //div.setAttribute("class", "another");
     div.style.backgroundColor = "green";
     div.style.padding = "1px";
     // div.innerText = "Hello World from JS";
     const addText = document.createTextNode("Hello World from JS");
     div.appendChild(addText);
 
+    div.appendChild(p);
     document.body.appendChild(div);
   </script>
 </html>
