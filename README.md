@@ -1,2 +1,3 @@
 # Js-byCaC
-A code repo for JS learning 
+
+A code repo for JS learning.
