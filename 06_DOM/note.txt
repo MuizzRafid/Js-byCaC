@@ -1,0 +1,22 @@
+               **DOM learns whats matters**
+
+
+ -->What is DOM?
+
+ -->4 pillars of DOM
+
+There are Four pillars of DOM.
+1)selection of Element
+2)Changing HTML
+3)Changing Css
+4)Event Listner
+
+ -->using of Single Event
+
+ -->Using of Multiple Events
+
+ -->Selecting multiple elements at a same time
+
+ -->setTimeout
+
+ -->setInterval

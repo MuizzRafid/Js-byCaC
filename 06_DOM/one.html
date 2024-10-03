@@ -9,6 +9,9 @@
             background-color: #212121;
             color: #ffffff;
         }
+        #title{
+            padding: 4px 10px 4px 10px;
+        }
     </style>
 </head>
 <body class="bg-black">
@@ -27,3 +30,16 @@
     </div>
 </body>
 </html>
+
+<script>
+    //follow notes
+    var a=document.querySelector('#title');
+    a.innerHTML="Changed HTML";
+    a.style.color="red";
+    //We follow camal case instead of dash "-".
+    a.style.backgroundColor="white";
+    a.addEventListener("click",function(){
+        a.innerHTML="Badal gya hu mai";
+    })
+
+</script>
