@@ -13,9 +13,15 @@ There are Four pillars of DOM.
 
  -->using of Single Event
 
+follow one.html
+
  -->Using of Multiple Events
 
+
  -->Selecting multiple elements at a same time
+ 
+using queryselectorAll i can select same type of element.which
+store in a node.using foreach i can itarete them.one.html(45-48)
 
  -->setTimeout
 
