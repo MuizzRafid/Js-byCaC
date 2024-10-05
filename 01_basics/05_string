@@ -1,35 +1,33 @@
-
-
 //backtics(''):(upper key of tap)
 //it help for interpolation.Helps to make place holder to inject variable
-const name="Muizz";
-const repo=50;
+const namee = "Muizz";
+const repo = 50;
 
-console.log(`Hello my name is ${name} and my repo count ${repo}`);
+console.log(`Hello my name is ${namee} and my repo count ${repo}`);
 
 // Another way to declare string
 
-const gameName=new String('mobileLegend-Bang-Bang');
+const gameName = new String("mobileLegend-Bang-Bang");
 
 // console.log(gameName.__proto__);
 console.log(gameName.length);
 // console.log(gameName.toUpperCase());
 console.log(gameName.charAt(6));
-console.log(gameName.indexOf('B'));
+console.log(gameName.indexOf("B"));
 
-const newString=gameName.substring(0,6);
+const newString = gameName.substring(0, 6);
 console.log(newString);
 
-const aS=gameName.slice(-22,4);//mobi
+const aS = gameName.slice(-22, 4); //mobi
 console.log(aS);
 
-const newSOne="     Muizz  ";
+const newSOne = "     Muizz  ";
 
 console.log(newSOne);
 console.log(newSOne.trim());
 
-const url="https://www.google.con/Muizz%20Rafid";
+const url = "https://www.google.con/Muizz%20Rafid";
 
-console.log(url.replace('%20','-'));
+console.log(url.replace("%20", "-"));
 
-console.log(gameName.split('-'));
+console.log(gameName.split("-"));

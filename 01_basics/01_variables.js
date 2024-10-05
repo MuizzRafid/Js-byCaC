@@ -38,7 +38,8 @@ Copy code
 console.log(b); // ReferenceError: b is not defined
 3. const:
 Scope: Like let, const is block-scoped.
-Reassignability: const is used for variables that should not be reassigned. Once assigned a value, it cannot be changed. However, if the const holds an object or array, its properties or elements can still be modified (but the variable cannot be reassigned).
+Reassignability: const is used for variables that should not be reassigned. Once assigned a value, it cannot be changed. However, if the const holds an object or array,
+ its properties or elements can still be modified (but the variable cannot be reassigned).
 Hoisting: const is also hoisted but not initialized, and using it before declaration will cause a ReferenceError.
 Example:
 javascript
@@ -50,6 +51,8 @@ c = 40; // Error: Assignment to constant variable
 const arr = [1, 2, 3];
 arr.push(4); // This works because we are not reassigning the variable
 console.log(arr); // [1, 2, 3, 4]
+
+arr=[4,5,7];//error cause i reassining
 Summary:
 var: Function-scoped, can be redeclared/reassigned, hoisted (initialized to undefined).
 let: Block-scoped, can be reassigned but not redeclared in the same scope, hoisted (but not initialized).
