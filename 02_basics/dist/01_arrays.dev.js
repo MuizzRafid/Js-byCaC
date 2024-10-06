@@ -2,7 +2,9 @@
 
 //way to declare array
 var myArr = [0, 1, 2, 3, 4, 5];
-var myArr2 = new Array("a", "b", "c", "d"); //when we copy an array makes shallow copy(same reference)
+var myArr2 = new Array("a", "b", "c", "d");
+var deepCopy = JSON.parse(JSON.stringify(myArr)); //Cause Array is object
+//when we copy an array makes shallow copy(same reference)
 //and another type  is deep copy(not same reference)
 //console.log(myArr);//[0,1,2,3,4,5]
 

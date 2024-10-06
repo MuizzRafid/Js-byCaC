@@ -2,7 +2,8 @@
 
 const myArr = [0, 1, 2, 3, 4, 5];
 const myArr2 = new Array("a", "b", "c", "d");
-
+const deepCopy = JSON.parse(JSON.stringify(myArr));
+//Cause Array is object
 //when we copy an array makes shallow copy(same reference)
 //and another type  is deep copy(not same reference)
 

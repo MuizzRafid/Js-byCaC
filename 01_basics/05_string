@@ -2,12 +2,17 @@
 //it help for interpolation.Helps to make place holder to inject variable
 const namee = "Muizz";
 const repo = 50;
-
+//those are primitive data type string which immutable
+//means namee[0]="L" doesn't work
 console.log(`Hello my name is ${namee} and my repo count ${repo}`);
 
 // Another way to declare string
 
+const gameName1 = "mobileLegend-Bang-Bang";
 const gameName = new String("mobileLegend-Bang-Bang");
+console.log(gameName1 === gameName);
+
+//false cause string objects are compared by referene
 
 // console.log(gameName.__proto__);
 console.log(gameName.length);
