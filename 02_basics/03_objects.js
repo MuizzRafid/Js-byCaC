@@ -40,27 +40,30 @@ JsUser.greetingtwo = function () {
 console.log(JsUser.greetingtwo());
 console.log(JsUser.greeting());
 /*
+console.log of greeting print hello js user.
+but what console.log(JsUser.greeting()) print??//undefined
+
 In JavaScript, when a function does not have an explicit return 
-statement, it implicitly returns undefined. In your code, the print
+statement, it implicitly returns undefined. In your code, the greeting
 method of the user object does not have a return statement, so it 
 returns undefined by default.
-When you call console.log(user.print()), the user.print() part executes
-the print method, which logs "hello every one!" to the console. However,
-since there is no explicit return statement in the print method, it 
-implicitly returns undefined. Therefore, console.log(user.print()) effectively
+When you call console.log(Jsuser.greeting()), the jsuser.greeting() part executes
+the greeting method, which logs "hello every one!" to the console. However,
+since there is no explicit return statement in the greeting method, it 
+implicitly returns undefined. Therefore, console.log(jsuser.greeting()) effectively
 becomes console.log(undefined), and that's why you see undefined in the 
 output.
 */
 
 JsUser.greeting();
 /*
-You won't get undefined in the output because you are directly calling the user.
-print() function, and it logs "hello everyone!" to the console. The console.log
+You won't get undefined in the output because you are directly calling the jsuser.
+greeting() function, and it logs "hello everyone!" to the console. The console.log
 itself does not return a value, so there is no undefined to be printed in this case. 
 If you only call the function without wrapping it in a console.log, you won't see 
 any output related to the return value of the function.
 The undefined in the original example occurred when you tried to log the result of 
-user.print() directly using console.log(user.print()), and since the print method 
+jsuser.greeting() directly using console.log(jsuser.greeting()), and since the print method 
 did not explicitly return anything, it implicitly returned undefined
 
 */

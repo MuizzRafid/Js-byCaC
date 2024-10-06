@@ -37,7 +37,7 @@ Object.defineProperty(obj3, "5", { enumerable: false });
 
 //const obj4={obj1,obj2,obj3}//we see under obj3 two more obj are obj1,obj2...still the problem
 
-//two ways to combine obj 1>assign ,2>spread
+//two ways to combine obj. 1>assign ,2>spread
 
 //****Object.assign() copies only enumerable properties from source objects to the target
 //object.If a property is non-enumerable, it won't be included in the copy.
@@ -65,6 +65,9 @@ const course = {
 };
 
 //object destructuring
+//Object destructuring is a way to quickly get values out of an object and store
+//them in variables. Instead of writing long lines to access each property,
+//destructuring lets you pick out the values in a simple, clean way.
 
 const { courseInstructor: Instructor } = course;
 //console.log(courseInstructor);
