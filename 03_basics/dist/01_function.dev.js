@@ -21,8 +21,7 @@ result = addTwoNumbers2(3, 5); //console.log("My result 2:",result);//My result 
 
 function loginUserMessege(username) {
   if (!username) {
-    console.log("Please enter a username");
-    return;
+    return "Please enter a username";
   }
 
   return "".concat(username, " just logged in");
@@ -31,7 +30,7 @@ function loginUserMessege(username) {
 
 /*
 rest operator(...) or spread operator(...) named different on diff uses
-for rest:(...) it allows to represent an indefinite number of argurments as and 
+for rest:(...) it allows to represent an indefinite number of argurments as an 
 array.The rest parameter must be that parameter in a function's parameter list
 */
 // ** REST operator(...)

@@ -5,7 +5,15 @@ There are 3 Types of scope:
 3.block scope(if..else,forloop)
 
 var:has global scope
-let and const:has block scope
+In JavaScript, var is a keyword that is part of the language itself, 
+but the variables declared with var in a browser environment also become 
+properties of the global object, which is the window object.
+//var v=100;
+//console.log(window.v);//output 100
+
+let and const:has block scope and they don't exhibit the behavior of Var;
+//let l=39;
+//console.log(window.l);//undefined 
 */
 
 var c = 300; //c is a global variable
@@ -76,7 +84,7 @@ const addTwo = function (num) {
   return num + 2;
 };
 
-addThree(); // gives error
+addThree(); //Type error addThree is not function;using var it hoisted but as variable
 var addThree = () => {
   console.log("Arrow Function");
 };
