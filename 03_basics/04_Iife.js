@@ -6,7 +6,7 @@
 //** Syntax:1
 (function chai() {
   //console.log(`DB CONNECTED`);
-})(); //semicolor is mendatory to stop the line
+})(); //semicolon is mendatory to stop the line
 
 ((name) => {
   //console.log(`DB CONNECTED TOO ${name}`);
@@ -29,6 +29,11 @@ common uses are:
 */
 
 //Module
+/*
+modules allow you to break up your code into smaller, reusable pieces, which 
+can be imported and used across different parts of your application. This helps
+with organizing code, improving maintainability, and avoiding global namespace pollution.
+*/
 let Mymodule = (function () {
   function privateFun() {
     return "Hey!I am private";

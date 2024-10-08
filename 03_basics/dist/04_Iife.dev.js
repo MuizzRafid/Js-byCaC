@@ -5,7 +5,7 @@
 //syntax: ()() >1st parenthesis for defination ,2nd for execution
 //** Syntax:1
 (function chai() {//console.log(`DB CONNECTED`);
-})(); //semicolor is mendatory to stop the line
+})(); //semicolon is mendatory to stop the line
 
 
 (function (name) {//console.log(`DB CONNECTED TOO ${name}`);
@@ -24,6 +24,12 @@ common uses are:
 2.Closure
 */
 //Module
+
+/*
+modules allow you to break up your code into smaller, reusable pieces, which 
+can be imported and used across different parts of your application. This helps
+with organizing code, improving maintainability, and avoiding global namespace pollution.
+*/
 
 
 var Mymodule = function () {
