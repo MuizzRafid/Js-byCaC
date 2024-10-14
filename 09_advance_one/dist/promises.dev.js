@@ -96,7 +96,7 @@ consumePromiseFive();
 //     }
 // }
 // getAllUsers();
-//NO:2 Using Fetch
+//NO:2 Using then();
 fetch("https://jsonplaceholder.typicode.com/users").then(function (response) {
   return response.json();
 }).then(function (data) {
@@ -104,4 +104,60 @@ fetch("https://jsonplaceholder.typicode.com/users").then(function (response) {
   console.log(data);
 })["catch"](function (error) {
   console.log(error);
-});
+}); //
+//                                 ************* promise by akshay saini
+
+/*
+const cart = ["shoes", "pants", "kurta"];
+
+const promiseMe = creatOrder(cart);
+//console.log(promise);
+
+//we need then to resolve the promise. So we do the same thing with promiseMe
+//return prceedToPayment.proceedToPayment is a promise so we need another then()
+//to resolve it but i we return data then its fine
+
+//another thing if we use catch method after one then it works for the upper code.
+//it will not take responsibility for the lower than it.
+promiseMe
+  .then((id) => {
+    console.log(id);
+    return id;
+  })
+  .then((id) => {
+    return proceedToPayment(id);
+  })
+  .then((print) => console.log(print))
+  .catch((err) => {
+    console.log(err.message);
+  });
+
+function creatOrder(cart) {
+  const pr = new Promise(function (resolve, reject) {
+    if (!validateCart(cart)) {
+      var err = new Error("cart is not valid");
+      var err2 = "cart did not created";
+      reject(err);
+    }
+    const id = 1383;
+    if (id) {
+      setTimeout(() => {
+        resolve(id);
+      }, 1000);
+    }
+  });
+  return pr;
+}
+
+function validateCart() {
+  return true;
+}
+
+function proceedToPayment(id) {
+  return new Promise((resolve, reject) => {
+    resolve("Payment Sucessfully ", id);
+  });
+}
+
+
+*/
