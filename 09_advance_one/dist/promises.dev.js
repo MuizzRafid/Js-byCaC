@@ -1,3 +1,5 @@
+"use strict";
+
 //promise object as a placeholder for a certain period of time until we recived a value
 //from async operation.other def: a container for the future value.other def: a promise is an
 //object representing the eventual completion or failure of an asychronous operation.
@@ -82,7 +84,6 @@ consumePromiseFive();
 
 */
 //Two ways to do
-
 //**NO:1 using Async & Await
 // async function getAllUsers(){
 //     try{
@@ -93,19 +94,14 @@ consumePromiseFive();
 //     }catch(err){
 //         console.log("E: ",err);
 //     }
-
 // }
 // getAllUsers();
-
 //NO:2 Using Fetch
-fetch("https://jsonplaceholder.typicode.com/users")
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    //console.log("fetch");
-    console.log(data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+fetch("https://jsonplaceholder.typicode.com/users").then(function (response) {
+  return response.json();
+}).then(function (data) {
+  //console.log("fetch");
+  console.log(data);
+})["catch"](function (error) {
+  console.log(error);
+});
