@@ -1,3 +1,5 @@
+//                  ********* defination of promise
+
 //promise object as a placeholder for a certain period of time until we recived a value
 //from async operation.other def: a container for the future value.other def: a promise is an
 //object representing the eventual completion or failure of an asychronous operation.
