@@ -1,0 +1,103 @@
+function callback(n) {
+  return n + 1;
+}
+
+const arr = [1, 2, 3, 4, 5];
+
+function PleaseCalculate(arr, callback) {
+  const result = [];
+  arr.forEach((e) => {
+    result.push(callback(e));
+  });
+  result.forEach((e) => {
+    console.log(e);
+  });
+  console.log("end");
+}
+
+PleaseCalculate(arr, callback);
+
+PleaseCalculate(arr, (n) => {
+  return n + 2;
+});
+
+
+
+//           who does it works behind
+
+How It Works Behind the Scenes:
+1. Definition and Passing the Function:
+When you call PleaseCalculate like this, an anonymous function is created at the moment the code is 
+executed. This function has no name, but it’s still a first-class object in JavaScript (functions in 
+JavaScript are objects). You can pass this object around, just like any other object or variable.
+
+The anonymous function (n) => { return n + 2; } is passed to PleaseCalculate and assigned to the callback
+ parameter of the function.
+
+2. Anonymous Function in Memory:
+Even though it has no name, the anonymous function is still stored in memory. The JavaScript engine 
+allocates memory for the function object and links it to the callback parameter inside PleaseCalculate.
+
+In simple terms: An anonymous function is like an unnamed object in memory that is assigned to callback.
+ It doesn’t need a name to function, it just exists in memory for as long as it is needed.
+3. Calling the Anonymous Function:
+Now,within PleaseCalculate, you are using the callback function on each element of the array.Specifically,
+ this line in PleaseCalculate:
+
+javascript
+Copy code
+result.push(callback(e)); // This calls the anonymous function
+Since callback refers to the anonymous function, JavaScript evaluates callback(e) by passing each 
+element (e) from arr into the anonymous function.
+
+So for each element in arr, the function n => n + 2 is called:
+
+For 1, the callback does 1 + 2 = 3
+For 2, the callback does 2 + 2 = 4
+And so on...
+4. After the Call:
+Once the PleaseCalculate function finishes its execution, the anonymous function is no longer needed, 
+so it is eventually garbage collected. In other words, the memory used by the anonymous function is 
+released because nothing else is referencing it.
+
+Step-by-Step Walkthrough:
+Let’s look at what happens step-by-step in this example:
+
+You call PleaseCalculate(arr, (n) => { return n + 2; });
+
+A new anonymous function (n) => { return n + 2; } is created and stored in memory.
+The reference to this function is passed as the callback parameter in PleaseCalculate.
+Inside PleaseCalculate:
+
+An empty array result = [] is created.
+The arr.forEach((e) => { ... }) loop starts, iterating over each element e in arr.
+For each element e, callback(e) is called, which invokes the anonymous function (n) => { return n + 2;}.
+
+The result of callback(e) is pushed into the result array.
+After iterating through the array, the result array holds the modified values ([3, 4, 5, 6, 7]).
+
+The second forEach loop logs each value from the result array, and then "end" is printed.
+
+Once PleaseCalculate is done executing, the anonymous function reference is no longer needed and will 
+be garbage collected.
+
+Summary of How the Anonymous Function Works:
+Anonymous Function Creation: The anonymous function (n) => n + 2 is created inline when the function 
+call is made.
+Memory Allocation: This function is temporarily stored in memory as a function object.
+Passed as Callback: The anonymous function is passed as the callback argument into PleaseCalculate.
+Execution: Each time callback(e) is invoked, the anonymous function is called, performing n + 2 for
+each element in the array.
+Garbage Collection: Once PleaseCalculate is done executing, the anonymous function is no longer 
+referenced, and the JavaScript engine eventually clears it from memory.
+Benefits of Using Anonymous Functions:
+Convenience: You can write a function without having to define it separately. This is useful for one-off
+ operations like callbacks.
+No Need for Naming: If you don't plan on reusing the function elsewhere, there’s no need to give it a
+ name.
+Clarity: Sometimes it can make code more readable by placing the logic directly where it’s needed 
+(like inside the function call).
+Final Thoughts:
+Anonymous functions (especially when passed as callbacks) are fundamental to JavaScript, particularly 
+for things like event handling, asynchronous operations, and higher-order functions 
+(like .map(), .forEach(), .filter()).
