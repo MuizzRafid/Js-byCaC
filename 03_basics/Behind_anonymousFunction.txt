@@ -1,3 +1,7 @@
+//i also can say that we should use anonymous function cause when its job done it goes to the garbage 
+//rather stays in memory like named function
+
+
 function callback(n) {
   return n + 1;
 }
