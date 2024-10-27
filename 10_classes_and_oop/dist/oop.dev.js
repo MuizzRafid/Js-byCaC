@@ -215,4 +215,5 @@ function (_Person2) {
 //parent not to get any error
 
 
-var rafid = new Engineer2("computer science", "july"); //console.log(rafid);
+var rafid = new Engineer2("computer science", "july"); //
+//console.log(rafid);

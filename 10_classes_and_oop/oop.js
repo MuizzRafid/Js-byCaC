@@ -146,4 +146,5 @@ class Engineer2 extends Person {
 
 let rafid = new Engineer2("computer science", "july");
 
+//
 //console.log(rafid);
