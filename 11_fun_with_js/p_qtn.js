@@ -85,4 +85,70 @@ const firstHalf = (str2) =>
 
 const concateTwo = (str1, str2) => str1.slice(1) + str2.slice(1);
 
-console.log(concateTwo("july", "downey"));
+//console.log(concateTwo("july", "downey"));
+
+//08.question:write a js program to check whether a given array of integers
+//is sorted in ascending order
+
+const checkArray = (arr) => {
+  let value = arr[0];
+  let res = "sorted accending";
+  arr.forEach((ele) => {
+    if (ele >= value) {
+      value = ele;
+    } else {
+      res = "not sorted";
+    }
+  });
+  return res;
+};
+
+//console.log(checkArray([1, 2, 3, 8, 5]));
+
+//09.question:write a js program to get the lagest even number from an array
+//of integers.
+
+const largestEvenNumber = (arr) => {
+  let res = 0;
+  arr.forEach((e) => {
+    if (e % 2 == 0 && e > res) {
+      res = e;
+    }
+  });
+  return res;
+};
+
+//console.log(largestEvenNumber([1, 2, 3, 4, 5, 6, 7, 8]));
+
+//10.question:Given two values ,write a js program to find out which one is nearest to 100
+
+const nearestHundred = (a, b) => {
+  a1 = Math.abs(100 - a);
+  b1 = Math.abs(100 - b);
+  let res;
+  if (a1 > b1 || a1 == b1) {
+    res = b;
+  } else {
+    res = a;
+  }
+  return res;
+};
+
+//console.log(nearestHundred(85, 110));
+
+//11.question:write js program to check a given string contains 2 to 4 occurrences of a specified
+//character.
+
+const occurrences = (str, char) => {
+  let res = 0;
+  str.split("").map((c) => {
+    if (c == char) res++;
+  });
+  return res;
+};
+
+//another way
+const occurrences2 = (str, char) =>
+  str.split("").filter((ch) => ch === char).length;
+
+//console.log(occurrences2("hello", "l"));
