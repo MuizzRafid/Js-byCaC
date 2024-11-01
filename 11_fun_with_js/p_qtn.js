@@ -31,9 +31,9 @@ const formateDate = function (date = new Date()) {
   return `${days}/${months}/${years}`;
 };
 
-console.log(formateDate());
+//console.log(formateDate());
 
-//04.question: write a javascript program to create a new string adding "New!" in front of a given string.
+//04.question:write a javascript program to create a new string adding "New!" in front of a given string.
 //if the given string begins with "New!" already then return the original string.
 
 let myString = "offer gets ready";
@@ -87,7 +87,63 @@ const concateTwo = (str1, str2) => str1.slice(1) + str2.slice(1);
 
 //console.log(concateTwo("july", "downey"));
 
-//08.question:write a js program to check whether a given array of integers
+//time : 6:18
+
+//08.question:Given two values ,write a js program to find out which one is nearest to 100
+
+const nearestHundred = (a, b) => {
+  a1 = Math.abs(100 - a);
+  b1 = Math.abs(100 - b);
+  let res;
+  if (a1 > b1 || a1 == b1) {
+    res = b;
+  } else {
+    res = a;
+  }
+  return res;
+};
+
+//console.log(nearestHundred(85, 110));
+
+//09.question:write js program to check a given string contains 2 to 4 occurrences of a specified
+//character.
+
+const occurrences = (str, char) => {
+  let res = 0;
+  str.split("").map((c) => {
+    if (c == char) res++;
+  });
+  return res;
+};
+
+//another way
+const occurrences2 = (str, char) =>
+  str.split("").filter((ch) => ch === char).length;
+
+//aconsole.log(occurrences2("hello", "l"));
+//part 2 end
+
+//10.question:write a js program to find the number of even digits in an array of integers
+
+const evenDigits = (arr) => {
+  res = 0;
+  arr.map((e) => {
+    if (e % 2 == 0) {
+      res++;
+    }
+  });
+  return res;
+};
+
+//console.log(evenDigits([1, 2, 3, 4]));
+
+//another way
+
+const evenDigits2 = (arr) => arr.filter((ele) => ele % 2 == 0).length;
+
+//console.log(evenDigits2([1, 2, 3, 4, 5, 6, 8, 10]));
+
+//11.question:write a js program to check whether a given array of integers
 //is sorted in ascending order
 
 const checkArray = (arr) => {
@@ -105,7 +161,7 @@ const checkArray = (arr) => {
 
 //console.log(checkArray([1, 2, 3, 8, 5]));
 
-//09.question:write a js program to get the lagest even number from an array
+//12.question:write a js program to get the lagest even number from an array
 //of integers.
 
 const largestEvenNumber = (arr) => {
@@ -120,35 +176,28 @@ const largestEvenNumber = (arr) => {
 
 //console.log(largestEvenNumber([1, 2, 3, 4, 5, 6, 7, 8]));
 
-//10.question:Given two values ,write a js program to find out which one is nearest to 100
+//13.question:write js program to replace the first digit in a string(contains  digit) with
+//$ charecter.
 
-const nearestHundred = (a, b) => {
-  a1 = Math.abs(100 - a);
-  b1 = Math.abs(100 - b);
-  let res;
-  if (a1 > b1 || a1 == b1) {
-    res = b;
-  } else {
-    res = a;
-  }
-  return res;
-};
+const replaceFirst = (str) => str.replace(/[0-9]/, "$");
 
-//console.log(nearestHundred(85, 110));
+//console.log(replaceFirst("july2"));
 
-//11.question:write js program to check a given string contains 2 to 4 occurrences of a specified
-//character.
+//end 3
 
-const occurrences = (str, char) => {
-  let res = 0;
-  str.split("").map((c) => {
-    if (c == char) res++;
-  });
-  return res;
-};
+//14.question:Given a year, report if it is a leap year.
 
-//another way
-const occurrences2 = (str, char) =>
-  str.split("").filter((ch) => ch === char).length;
+const leapYearCheck = (year) =>
+  (year % 100) % 4 == 0 ? "leap Year" : "not Leap Year";
 
-//console.log(occurrences2("hello", "l"));
+//console.log(leapYearCheck(96));
+
+//15.question:Write a js program to compare two objects to determine if the first one contains the
+//same properties as the second one (which may also have additional properties)
+
+const objA = { a: 1, b: 2, c: 3 };
+const objB = { a: 1, b: 2, c: 3, d: 4 };
+const objC = { a: 1, b: 2, c: 3 };
+const objectsEqual = (a, b) => Object.keys(a).every((key) => b[key]);
+console.log(objectsEqual(objA, objB));
+//every iterate every values in that array and passing a boolian expression in to it
