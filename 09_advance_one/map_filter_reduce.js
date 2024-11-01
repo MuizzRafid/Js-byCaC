@@ -64,7 +64,7 @@ const max = arr.reduce((acc, cur) => {
 
 console.log(max);
 
-//    ** UNDER STAND MAP() FILTER() REDUCE() WITH MORE EXAMPLES
+//    ** UNDERSTAND MAP() FILTER() REDUCE() WITH MORE EXAMPLES
 
 const users = [
   { firstName: "july", lastName: "mota", age: 5 },
@@ -84,6 +84,7 @@ console.log(output4);
 const output5 = users.reduce((acc, cur) => {
   if (acc[cur.age]) {
     acc[cur.age] = ++acc[cur.age];
+    //behind:acc['26']=++1;
   } else {
     acc[cur.age] = 1;
   }
@@ -100,3 +101,14 @@ console.log(output6);
 
 //hw : do the same thing using only reduce
 //poliphe of map filter redue
+
+let index = 0;
+const output7 = users.reduce((acc, cur) => {
+  if (cur.age < 30) {
+    acc[index] = cur.firstName + " and age: " + cur.age;
+    index++;
+  }
+  return acc;
+}, {});
+
+console.log(output7);

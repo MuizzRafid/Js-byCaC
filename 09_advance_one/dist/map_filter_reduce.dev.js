@@ -50,7 +50,7 @@ var max = arr.reduce(function (acc, cur) {
 
   return acc;
 }, 0);
-console.log(max); //    ** UNDER STAND MAP() FILTER() REDUCE() WITH MORE EXAMPLES
+console.log(max); //    ** UNDERSTAND MAP() FILTER() REDUCE() WITH MORE EXAMPLES
 
 var users = [{
   firstName: "july",
@@ -80,7 +80,7 @@ console.log(output4); // find it [5:1,26:2,50:1,75:1]
 
 var output5 = users.reduce(function (acc, cur) {
   if (acc[cur.age]) {
-    acc[cur.age] = ++acc[cur.age];
+    acc[cur.age] = ++acc[cur.age]; //behind:acc['26']=++1;
   } else {
     acc[cur.age] = 1;
   }
@@ -97,3 +97,14 @@ var output6 = users.filter(function (x) {
 });
 console.log(output6); //hw : do the same thing using only reduce
 //poliphe of map filter redue
+
+var index = 0;
+var output7 = users.reduce(function (acc, cur) {
+  if (cur.age < 30) {
+    acc[index] = cur.firstName + " and age: " + cur.age;
+    index++;
+  }
+
+  return acc;
+}, {});
+console.log(output7);
