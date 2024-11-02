@@ -201,3 +201,68 @@ const objC = { a: 1, b: 2, c: 3 };
 const objectsEqual = (a, b) => Object.keys(a).every((key) => b[key]);
 console.log(objectsEqual(objA, objB));
 //every iterate every values in that array and passing a boolian expression in to it
+
+//16.question:write a js program to convert a comma-separated values string to a 2D array.A new line
+//indicates a new row in the array
+
+//abc,def,ghi
+//jkl,mno,pqr
+//stu,vwx,yza
+
+const parseCSV = (csvString) =>
+  csvString.split("\n").map((row) => row.split(","));
+
+const str2 = `abc,def,ghi
+jkl,mno,pqr
+stu,vwx,yza`;
+//console.log(parseCSV(str2));
+
+//17.question:Write a js program to generate a random hexadecimal color Code.
+
+const arr = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "0",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+];
+const hexColorCode = () => {
+  let str3 = "#";
+  for (let i = 0; i < 6; i++) {
+    str3 = str3 + arr[Math.floor(Math.random() * 16)];
+  }
+  return str3;
+};
+
+//console.log(hexColorCode());
+
+//another way
+
+const hexColorCode2 = () => Math.floor(Math.random() * 16).toString(16);
+const getRandomHexColor = () =>
+  "#" + Array.from({ length: 6 }).map(hexColorCode2).join("");
+
+//console.log(getRandomHexColor());
+
+//18.question:Write a js program that returns true if the provided predicate function returns true
+//for all elements in a collections ,false otherwise.
+
+const predicateFunction = (arr) => !arr.some((e) => e <= 3);
+
+//console.log(predicateFunction([1, 4, 5, 7]));
+
+//another wary
+
+const predicateFunction2 = (arr) => arr.every((x) => x > 3);
+//console.log(predicateFunction2([1, 4, 5, 7]));
