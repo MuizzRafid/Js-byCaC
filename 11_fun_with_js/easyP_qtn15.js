@@ -266,3 +266,66 @@ const predicateFunction = (arr) => !arr.some((e) => e <= 3);
 
 const predicateFunction2 = (arr) => arr.every((x) => x > 3);
 //console.log(predicateFunction2([1, 4, 5, 7]));
+
+//4 end
+
+//19.question:Write a js function that returns a passed string with letters in alphabetica order.
+
+function alphabeticalOrder(str) {
+  let str2 = [str.length];
+  let count = 0;
+  str.split("").forEach((e) => {
+    for (let i = 0; i < str.length; i++) {
+      if (e > str[i]) {
+        count++;
+      }
+    }
+    if (str2[count] == e) {
+      str2[count + 1] = e;
+      count = 0;
+    } else {
+      str2[count] = e;
+      count = 0;
+    }
+  });
+
+  return str2.map((e) => e).join("");
+}
+
+//console.log(alphabeticalOrder("webmaster"));
+
+//another way
+
+const alphabeticalOrder2 = (str) => {
+  return str
+    .split("")
+    .sort((a, b) => (a > b ? 1 : -1))
+    .join("");
+};
+
+//console.log(alphabeticalOrder2("javascript"));
+
+//20.question:Write a js function that accepts a string as param and counts the number of vowels
+//within the string.
+
+const vowelsCount = (str) => {
+  count = 0;
+  str.split("").map((e) => {
+    if (e == "a" || e == "e" || e == "i" || e == "o" || e == "u") {
+      count++;
+    }
+  });
+  return count;
+};
+
+//console.log(vowelsCount("abceiouu"));
+
+//another way
+
+const countLetters = (str, letters = ["a", "e", "i", "o", "u"]) =>
+  str.split("").filter((s) => letters.indexOf(s) > -1).length;
+
+//console.log(countLetters("abceiouu"));
+
+//letters.indexOf(s) > -1 checks if the current character s exists in the letters array. If it does,
+// indexOf returns its position (non-negative), so it passes the filter.
