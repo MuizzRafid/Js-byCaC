@@ -1,5 +1,13 @@
 "use strict";
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 //01:question: write a javascript Program to get the extension of a filename.
 var getFileExtension = function getFileExtension(str) {
   return str.slice(str.lastIndexOf("."));
@@ -317,3 +325,40 @@ var countLetters = function countLetters(str) {
 }; //console.log(countLetters("abceiouu"));
 //letters.indexOf(s) > -1 checks if the current character s exists in the letters array. If it does,
 // indexOf returns its position (non-negative), so it passes the filter.
+//6:48
+//21.question:Write a js funcion to convert an amount to coins.Example input:46 and possibel coins
+//25,10,5,2,1
+//outPut: 25,10,10,1
+
+
+var amountToCoin = function amountToCoin(amount) {
+  var arr = [25, 10, 5, 2, 1];
+  var res = [];
+  var aC = 0;
+
+  for (var i = 0; amount > 0; i++) {
+    if (amount >= arr[aC]) {
+      amount -= arr[aC];
+      res.push(arr[aC]);
+    } else {
+      aC++;
+    }
+  }
+
+  return res.toString();
+}; //console.log(amountToCoin(46));
+//22.question:Write a js function to extract unique characters from a string.
+
+
+var uniqueChar = function uniqueChar(str) {
+  return str.split("").filter(function (item, index, arr) {
+    return arr.slice(index + 1).indexOf(item) === -1;
+  }).join(" ");
+}; //console.log(uniqueChar("ahb&dd@"));
+//way:2
+
+
+var getUniqueChars = function getUniqueChars(str) {
+  return _toConsumableArray(new Set(str.split(""))).join(" ");
+}; //console.log(getUniqueChars("ahb%k3*"));
+//13:20

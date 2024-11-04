@@ -329,3 +329,45 @@ const countLetters = (str, letters = ["a", "e", "i", "o", "u"]) =>
 
 //letters.indexOf(s) > -1 checks if the current character s exists in the letters array. If it does,
 // indexOf returns its position (non-negative), so it passes the filter.
+
+//6:48
+
+//21.question:Write a js funcion to convert an amount to coins.Example input:46 and possibel coins
+//25,10,5,2,1
+//outPut: 25,10,10,1
+
+const amountToCoin = (amount) => {
+  let arr = [25, 10, 5, 2, 1];
+  let res = [];
+  let aC = 0;
+
+  for (let i = 0; amount > 0; i++) {
+    if (amount >= arr[aC]) {
+      amount -= arr[aC];
+      res.push(arr[aC]);
+    } else {
+      aC++;
+    }
+  }
+  return res.toString();
+};
+
+//console.log(amountToCoin(46));
+
+//22.question:Write a js function to extract unique characters from a string.
+
+const uniqueChar = (str) =>
+  str
+    .split("")
+    .filter((item, index, arr) => arr.slice(index + 1).indexOf(item) === -1)
+    .join(" ");
+
+//console.log(uniqueChar("ahb&dd@"));
+
+//way:2
+
+const getUniqueChars = (str) => [...new Set(str.split(""))].join(" ");
+
+//console.log(getUniqueChars("ahb%k3*"));
+
+//13:20
