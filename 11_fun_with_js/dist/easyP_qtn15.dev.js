@@ -362,3 +362,4 @@ var getUniqueChars = function getUniqueChars(str) {
   return _toConsumableArray(new Set(str.split(""))).join(" ");
 }; //console.log(getUniqueChars("ahb%k3*"));
 //13:20
+//23.question:
