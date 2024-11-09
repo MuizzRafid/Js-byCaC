@@ -372,4 +372,32 @@ const getUniqueChars = (str) => [...new Set(str.split(""))].join(" ");
 
 //13:20
 
-//23.question:
+//23.question:Write a js function to find the first not repeated character.
+//example String:'abacddbec'
+//example output: 'e'
+
+const firstNonRepeated = (str) => {
+  let finalStr = str
+    .split("")
+    .filter(
+      (item, index, arr) =>
+        arr.slice(index + 1).indexOf(item) === -1 &&
+        arr.slice(0, index).indexOf(item) === -1
+    )
+    .join("");
+  return finalStr[0];
+};
+
+//console.log(firstNonRepeated("abacddbecg"));
+
+//Another way
+const getNonReapeatedChars = (str) => {
+  return str
+    .split("")
+    .filter(
+      (item, index, arr) =>
+        arr.filter((arrItem) => arrItem === item).length === 1
+    );
+};
+
+console.log(getNonReapeatedChars("abacddbecg"));

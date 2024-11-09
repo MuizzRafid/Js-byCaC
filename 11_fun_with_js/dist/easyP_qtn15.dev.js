@@ -362,4 +362,26 @@ var getUniqueChars = function getUniqueChars(str) {
   return _toConsumableArray(new Set(str.split(""))).join(" ");
 }; //console.log(getUniqueChars("ahb%k3*"));
 //13:20
-//23.question:
+//23.question:Write a js function to find the first not repeated character.
+//example String:'abacddbec'
+//example output: 'e'
+
+
+var firstNonRepeated = function firstNonRepeated(str) {
+  var finalStr = str.split("").filter(function (item, index, arr) {
+    return arr.slice(index + 1).indexOf(item) === -1 && arr.slice(0, index).indexOf(item) === -1;
+  }).join("");
+  return finalStr[0];
+}; //console.log(firstNonRepeated("abacddbecg"));
+//Another way
+
+
+var getNonReapeatedChars = function getNonReapeatedChars(str) {
+  return str.split("").filter(function (item, index, arr) {
+    return arr.filter(function (arrItem) {
+      return arrItem === item;
+    }).length === 1;
+  });
+};
+
+console.log(getNonReapeatedChars("abacddbecg"));
