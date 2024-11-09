@@ -382,6 +382,4 @@ var getNonReapeatedChars = function getNonReapeatedChars(str) {
       return arrItem === item;
     }).length === 1;
   });
-};
-
-console.log(getNonReapeatedChars("abacddbecg"));
+}; //console.log(getNonReapeatedChars("abacddbecg"));

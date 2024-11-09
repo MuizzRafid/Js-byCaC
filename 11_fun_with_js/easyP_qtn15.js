@@ -400,4 +400,4 @@ const getNonReapeatedChars = (str) => {
     );
 };
 
-console.log(getNonReapeatedChars("abacddbecg"));
+//console.log(getNonReapeatedChars("abacddbecg"));
