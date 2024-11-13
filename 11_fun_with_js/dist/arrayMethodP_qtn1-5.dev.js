@@ -87,3 +87,4 @@ var olderThan = function olderThan() {
     return new Date().getFullYear() - new Date(ele.DOB).getFullYear() > 35;
   });
 }; //console.log(olderThan());
+//3.question:

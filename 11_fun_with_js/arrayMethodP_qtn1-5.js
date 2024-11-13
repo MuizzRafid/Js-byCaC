@@ -106,3 +106,5 @@ const olderThan = () => {
 };
 
 //console.log(olderThan());
+
+//3.question:
