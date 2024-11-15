@@ -87,4 +87,4 @@ var olderThan = function olderThan() {
     return new Date().getFullYear() - new Date(ele.DOB).getFullYear() > 35;
   });
 }; //console.log(olderThan());
-//3.question:
+//3.question:Get a list of the people's full name (firstName and lastName).
