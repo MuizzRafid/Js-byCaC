@@ -88,3 +88,20 @@ var olderThan = function olderThan() {
   });
 }; //console.log(olderThan());
 //3.question:Get a list of the people's full name (firstName and lastName).
+
+
+var fullName = function fullName() {
+  people.map(function (person) {
+    return "".concat(person.firstName, " ").concat(person.lastName);
+  });
+}; //console.log(fullName());
+//another way
+
+
+var fullName2 = function fullName2() {
+  return people.map(function (_ref) {
+    var firstName = _ref.firstName,
+        lastName = _ref.lastName;
+    return "".concat(firstName, " ").concat(lastName);
+  });
+}; //console.log(fullName2());

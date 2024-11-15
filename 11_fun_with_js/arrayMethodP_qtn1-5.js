@@ -108,3 +108,17 @@ const olderThan = () => {
 //console.log(olderThan());
 
 //3.question:Get a list of the people's full name (firstName and lastName).
+
+const fullName = () => {
+  people.map((person) => `${person.firstName} ${person.lastName}`);
+};
+
+//console.log(fullName());
+
+//another way
+
+const fullName2 = () => {
+  return people.map(({ firstName, lastName }) => `${firstName} ${lastName}`);
+};
+
+//console.log(fullName2());
