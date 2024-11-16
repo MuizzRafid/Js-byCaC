@@ -1,5 +1,11 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var people = [{
   firstName: "Sam",
   lastName: "Hughes",
@@ -105,3 +111,23 @@ var fullName2 = function fullName2() {
     return "".concat(firstName, " ").concat(lastName);
   });
 }; //console.log(fullName2());
+//04.question:Get a list of people in the array ordered from youngest to oldest.
+
+
+var youngestToOlderest = function youngestToOlderest() {
+  return people.map(function (person) {
+    return new Date().getFullYear() - new Date(person.DOB).getFullYear();
+  }).sort(function (a, b) {
+    return a - b;
+  });
+}; //console.log(youngestToOlderest());
+//05.question:How many people are there in each department?
+
+
+var departmentCount = function departmentCount() {
+  return people.reduce(function (acc, person) {
+    return _objectSpread({}, acc, _defineProperty({}, person.department, acc[person.department] + 1 || 1));
+  }, {});
+};
+
+console.log(departmentCount());

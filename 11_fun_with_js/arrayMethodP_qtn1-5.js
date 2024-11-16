@@ -122,3 +122,27 @@ const fullName2 = () => {
 };
 
 //console.log(fullName2());
+
+//04.question:Get a list of people in the array ordered from youngest to oldest.
+
+const youngestToOlderest = () => {
+  return people
+    .map(
+      (person) => new Date().getFullYear() - new Date(person.DOB).getFullYear()
+    )
+    .sort((a, b) => a - b);
+};
+//console.log(youngestToOlderest());
+
+//05.question:How many people are there in each department?
+const departmentCount = () => {
+  return people.reduce(
+    (acc, person) => ({
+      ...acc,
+      [person.department]: acc[person.department] + 1 || 1,
+    }),
+    {}
+  );
+};
+
+console.log(departmentCount());
