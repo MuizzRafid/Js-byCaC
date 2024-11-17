@@ -146,3 +146,4 @@ const departmentCount = () => {
 };
 
 console.log(departmentCount());
+//06.question:

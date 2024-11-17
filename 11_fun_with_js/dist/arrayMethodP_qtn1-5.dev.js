@@ -130,4 +130,4 @@ var departmentCount = function departmentCount() {
   }, {});
 };
 
-console.log(departmentCount());
+console.log(departmentCount()); //06.question:
